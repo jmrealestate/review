@@ -1,0 +1,323 @@
+:root {
+	--body-bg-color: #f9f9f9;
+	--card-bg-color: white;
+	--h2-color: #333;
+	--p-color: #777;
+	--select-bg-color: white;
+	--select-border-color: #ccc;
+	--label-color: #555;
+	--success-bg-color: #f0f9f8;
+
+	.dark-mode {
+		--body-bg-color: #1b1b1b;
+		--card-bg-color: #232323;
+		--h2-color: white;
+		--p-color: #979797;
+		--select-bg-color: #424242;
+		--select-border-color: #464646;
+		--label-color: #cccccc;
+		--success-bg-color: #102724;
+	}
+}
+
+/* Fullscreen loader */
+#loader {
+	display: none; /* Hidden by default */
+	position: fixed;
+	z-index: 9999;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(
+		255,
+		255,
+		255,
+		0.8
+	); /* White overlay with transparency */
+	justify-content: center;
+	align-items: center;
+	pointer-events: none; /* Prevent any user interaction */
+}
+
+/* Spinner style */
+.spinner {
+	border: 8px solid #c4c4c4; /* Light gray */
+	border-top: 8px solid #009688;
+	border-radius: 50%;
+	width: 60px;
+	height: 60px;
+	animation: spin 1s linear infinite;
+}
+
+/* Animation for the spinner */
+@keyframes spin {
+	0% {
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
+}
+
+/* Disable all interactions when loader is active */
+body.loader-active {
+	pointer-events: none; /* Disable all clicks */
+	user-select: none; /* Disable text selection */
+	overflow: hidden; /* Prevent scrolling */
+	cursor: not-allowed; /* Show a not-allowed cursor */
+}
+
+body {
+	font-family: 'Roboto', sans-serif;
+	background-color: var(--body-bg-color);
+	margin: 0;
+	padding: 0 20px;
+}
+
+.np-img {
+	text-align: center;
+}
+
+.np-img img {
+	width: 100vw;
+	max-width: 180px;
+}
+
+.flex {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+}
+
+.flex > label {
+	margin-bottom: 0 !important;
+	cursor: pointer;
+}
+
+.container {
+	max-width: 600px;
+	margin: 30px auto;
+	background-color: var(--card-bg-color);
+	border-radius: 10px;
+	padding: 20px;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+	text-align: center;
+	color: var(--h2-color);
+	margin-bottom: 10px;
+}
+
+p {
+	text-align: center;
+	color: var(--p-color);
+}
+
+.question {
+	margin-bottom: 20px;
+}
+
+.question label {
+	font-weight: 500;
+	display: block;
+	margin-bottom: 10px;
+	color: var(--label-color);
+}
+
+textarea,
+input[type='text'],
+select {
+	width: 100%;
+	padding: 10px;
+	border: 1px solid var(--select-border-color);
+	border-radius: 5px;
+	font-size: 14px;
+	background-color: var(--select-bg-color);
+	color: var(--h2-color);
+}
+
+input[type='text'],
+textarea {
+	width: calc(100% - 20px) !important;
+}
+
+input[type='text']:focus,
+textarea:focus,
+select:focus {
+	border-color: #009688;
+	outline: none;
+}
+
+input[type='radio'] {
+	/* Remove the default appearance */
+	-webkit-appearance: none; /* For Safari */
+	-moz-appearance: none; /* For Firefox */
+	appearance: none;
+
+	/* Custom appearance for the radio button */
+	width: 21px;
+	height: 21px;
+	background-color: #eee;
+	border: 2px solid #009688;
+	border-radius: 50%; /* Make it round like a radio button */
+	cursor: pointer;
+	position: relative;
+	outline: none;
+}
+
+/* Style when the radio button is checked */
+input[type='radio']:checked {
+	background-color: #009688;
+	border-color: #009688;
+}
+
+/* Optional: add an inner dot to the radio button when checked */
+input[type='radio']:checked::before {
+	content: '';
+	position: absolute;
+	top: 4px;
+	left: 4px;
+	width: 10px;
+	height: 10px;
+	background-color: white;
+	border-radius: 50%;
+}
+
+#nameError {
+	color: red;
+	font-size: 12px;
+}
+
+#snackbar {
+	opacity: 0;
+	min-width: 230px;
+	background-color: #f44336;
+	color: #fff;
+	text-align: center;
+	border-radius: 5px;
+	padding: 14px;
+	position: fixed;
+	z-index: 1;
+	right: 30px;
+	top: 30px;
+	font-size: 14px;
+}
+
+#snackbar.show {
+	visibility: visible;
+	animation: fadeInOut 3s ease-in-out;
+}
+
+@keyframes fadeInOut {
+	0% {
+		top: 0;
+		opacity: 0;
+	}
+	10% {
+		top: 30px;
+		opacity: 1;
+	}
+	90% {
+		top: 30px;
+		opacity: 1;
+	}
+	100% {
+		top: 0;
+		opacity: 0;
+	}
+}
+
+.question-input {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.stars {
+	display: flex;
+	justify-content: space-between;
+	flex-direction: row-reverse;
+	width: fit-content;
+	gap: 15px;
+}
+
+.stars input {
+	display: none;
+}
+
+.stars label {
+	font-size: 25px;
+	color: #ddd;
+	cursor: pointer;
+}
+
+.stars input:checked ~ label,
+.stars label:hover,
+.stars label:hover ~ label {
+	color: #f5a623;
+}
+
+.selected-value {
+	margin-left: 10px;
+	font-size: 16px;
+	color: var(--h2-color);
+	font-weight: 500;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-bottom: 10px;
+}
+
+.submit {
+	text-align: center;
+}
+
+button {
+	background-color: #009688;
+	color: white;
+	border: none;
+	padding: 10px 20px;
+	border-radius: 5px;
+	font-size: 16px;
+	cursor: pointer;
+}
+
+button:hover {
+	background-color: #00796b;
+}
+
+.success-message {
+	text-align: center;
+	padding: 20px;
+	margin: 20px auto;
+	background-color: var(--success-bg-color);
+	border: 1px solid #4caf50;
+	border-radius: 10px;
+	color: var(--h2-color);
+	max-width: 400px;
+}
+.success-message i {
+	font-size: 50px;
+	color: #4caf50;
+	margin-bottom: 10px;
+}
+.success-message h2 {
+	font-family: 'Roboto', sans-serif;
+	font-size: 24px;
+	color: var(--h2-color);
+}
+.success-message p {
+	font-size: 16px;
+	color: var(--label-color);
+}
+
+@media (max-width: 768px) {
+	.container {
+		padding: 15px;
+	}
+
+	.stars label {
+		font-size: 20px;
+	}
+}

@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Feedback Form</title>
+		<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet" />
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+		<link rel="stylesheet" href="styles.css" />
+	</head>
+	<body>
+		<div id="loader">
+			<div class="spinner"></div>
+		</div>
+		<div class="container">
+			<div class="np-img">
+				<img src="./night-in-paradise.png" alt="" />
+			</div>
+			<h2>We value your feedback!</h2>
+			<p>Please take a moment to share your experience with us.</p>
+
+			<form id="feedbackForm">
+				<!-- Rating Questions -->
+				<div class="question">
+					<label for="overall-experience">
+						1. How would you rate your overall experience?
+						<span class="required">*</span>
+					</label>
+					<div class="question-input">
+						<div class="stars">
+							<input type="radio" id="star5" name="overall-experience" value="5" />
+							<label for="star5" title="Excellent"><i class="fas fa-star"></i></label>
+							<input type="radio" id="star4" name="overall-experience" value="4" />
+							<label for="star4" title="Good"><i class="fas fa-star"></i></label>
+							<input type="radio" id="star3" name="overall-experience" value="3" />
+							<label for="star3" title="Fair"><i class="fas fa-star"></i></label>
+							<input type="radio" id="star2" name="overall-experience" value="2" />
+							<label for="star2" title="Poor"><i class="fas fa-star"></i></label>
+							<input type="radio" id="star1" name="overall-experience" value="1" />
+							<label for="star1" title="Very Poor"><i class="fas fa-star"></i></label>
+						</div>
+						<span class="selected-value" id="overall-experience"></span>
+					</div>
+				</div>
+
+				<div class="question">
+					<label for="cleanliness">
+						2. How would you rate the cleanliness of the bungalow?
+						<span class="required">*</span>
+					</label>
+					<div class="question-input">
+						<div class="stars">
+							<input type="radio" id="clean5" name="cleanliness" value="5" />
+							<label for="clean5" title="Excellent"><i class="fas fa-star"></i></label>
+							<input type="radio" id="clean4" name="cleanliness" value="4" />
+							<label for="clean4" title="Good"><i class="fas fa-star"></i></label>
+							<input type="radio" id="clean3" name="cleanliness" value="3" />
+							<label for="clean3" title="Fair"><i class="fas fa-star"></i></label>
+							<input type="radio" id="clean2" name="cleanliness" value="2" />
+							<label for="clean2" title="Poor"><i class="fas fa-star"></i></label>
+							<input type="radio" id="clean1" name="cleanliness" value="1" />
+							<label for="clean1" title="Very Poor"><i class="fas fa-star"></i></label>
+						</div>
+						<span class="selected-value" id="cleanliness"></span>
+					</div>
+				</div>
+
+				<!-- Dropdown Questions -->
+				<div class="question">
+					<label for="comfort">
+						3. How comfortable was your stay?
+						<span class="required">*</span>
+					</label>
+					<div class="question-input">
+						<div class="stars">
+							<input type="radio" id="comfort5" name="comfort" value="5" />
+							<label for="comfort5" title="Very Comfortable"><i class="fas fa-star"></i></label>
+							<input type="radio" id="comfort4" name="comfort" value="4" />
+							<label for="comfort4" title="Comfortable"><i class="fas fa-star"></i></label>
+							<input type="radio" id="comfort3" name="comfort" value="3" />
+							<label for="comfort3" title="Somewhat Comfortable"><i class="fas fa-star"></i></label>
+							<input type="radio" id="comfort2" name="comfort" value="2" />
+							<label for="comfort2" title="Uncomfortable"><i class="fas fa-star"></i></label>
+							<input type="radio" id="comfort1" name="comfort" value="1" />
+							<label for="comfort1" title="Very Uncomfortable"><i class="fas fa-star"></i></label>
+						</div>
+						<span class="selected-value" id="comfort"></span>
+					</div>
+				</div>
+
+				<div class="question">
+					<label for="amenities">
+						4. How satisfied are you with the amenities provided (Wi-Fi, toiletries, etc.)?
+						<span class="required">*</span>
+					</label>
+					<div class="question-input">
+						<div class="stars">
+							<input type="radio" id="amenities5" name="amenities" value="5" />
+							<label for="amenities5" title="Very Satisfied"><i class="fas fa-star"></i></label>
+							<input type="radio" id="amenities4" name="amenities" value="4" />
+							<label for="amenities4" title="Satisfied"><i class="fas fa-star"></i></label>
+							<input type="radio" id="amenities3" name="amenities" value="3" />
+							<label for="amenities3" title="Neutral"><i class="fas fa-star"></i></label>
+							<input type="radio" id="amenities2" name="amenities" value="2" />
+							<label for="amenities2" title="Dissatisfied"><i class="fas fa-star"></i></label>
+							<input type="radio" id="amenities1" name="amenities" value="1" />
+							<label for="amenities1" title="Dissatisfied"><i class="fas fa-star"></i></label>
+						</div>
+						<span class="selected-value" id="amenities"></span>
+					</div>
+				</div>
+
+				<!-- Star Rating -->
+				<div class="question">
+					<label for="customer-service">
+						5. How would you rate the customer service?
+						<span class="required">*</span>
+					</label>
+					<div class="question-input">
+						<div class="stars">
+							<input type="radio" id="service5" name="customer-service" value="5" />
+							<label for="service5" title="Excellent"><i class="fas fa-star"></i></label>
+							<input type="radio" id="service4" name="customer-service" value="4" />
+							<label for="service4" title="Good"><i class="fas fa-star"></i></label>
+							<input type="radio" id="service3" name="customer-service" value="3" />
+							<label for="service3" title="Fair"><i class="fas fa-star"></i></label>
+							<input type="radio" id="service2" name="customer-service" value="2" />
+							<label for="service2" title="Poor"><i class="fas fa-star"></i></label>
+							<input type="radio" id="service1" name="customer-service" value="1" />
+							<label for="service1" title="Very Poor"><i class="fas fa-star"></i></label>
+						</div>
+						<span class="selected-value" id="customer-service"></span>
+					</div>
+				</div>
+
+				<div class="question">
+					<label for="recommend">
+						6. Would you recommend our bungalows to others?
+						<span class="required">*</span>
+					</label>
+
+					<div class="flex" style="margin-bottom: 10px">
+						<input type="radio" id="recommend1" name="recommend" value="yes" />
+						<label for="recommend1">Yes</label>
+					</div>
+					<div class="flex">
+						<input type="radio" id="recommend2" name="recommend" value="no" />
+						<label for="recommend2">No</label>
+					</div>
+				</div>
+
+				<!-- Open Text Fields -->
+				<div class="question">
+					<label for="improvement">7. Is there anything we could improve for future guests?</label>
+					<textarea id="improvement" name="improvement" rows="4"></textarea>
+				</div>
+
+				<div class="question">
+					<label for="comments">8. Any additional comments or suggestions?</label>
+					<textarea id="comments" name="comments" rows="4"></textarea>
+				</div>
+
+				<div class="question">
+					<label for="name">
+						9. Enter Your Name
+						<span class="required">*</span>
+					</label>
+					<div>
+						<input id="name" name="name" type="text" autocomplete="off" />
+						<div id="nameError"></div>
+					</div>
+				</div>
+
+				<!-- Submit Button -->
+				<div class="submit">
+					<button type="submit">Submit Feedback</button>
+				</div>
+			</form>
+		</div>
+		<div id="snackbar"></div>
+		<script src="script.js"></script>
+	</body>
+</html>
