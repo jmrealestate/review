@@ -161,9 +161,8 @@ if (called) {
 
 			const response = await fetch('https://main-server-u49f.onrender.com/api/v1/night-in-paradise/reviews', {
 				method: 'POST',
-				headers: {
-					'Content-Type': 'application/json',
-				},
+				credentials: 'include',
+				headers: { 'Content-Type': 'application/json' },
 				body: JSON.stringify(body),
 			});
 			hideLoader();
