@@ -210,30 +210,6 @@ function hideLoader() {
 	document.body.classList.remove('loader-active');
 }
 
-async function callLogApi() {
-	try {
-		const payload = {
-			uuid: localStorage.getItem('uuid'),
-			screenWidth: window.screen.width,
-			screenHeight: window.screen.height,
-			deviceOrientation: screen.orientation?.type || 'unknown',
-			service: '67e68ec68f2f350455c5cdc3',
-
-			platform: navigator.platform || 'unknown',
-			language: navigator.language || 'unknown',
-			timezone: Intl.DateTimeFormat().resolvedOptions().timeZone,
-		};
-
-		const response = await fetch('https://main-server-u49f.onrender.com/api/v1/ks-solutions/logs', {
-			method: 'POST',
-			credentials: 'include',
-			headers: { 'Content-Type': 'application/json' },
-			body: JSON.stringify(payload),
-		});
-
-		const uuid = await response.text();
-		localStorage.setItem('uuid', uuid);
-	} catch {}
-}
-
-callLogApi();
+KSS.init({
+	serviceId: '67e68ec68f2f350455c5cdc3',
+});
