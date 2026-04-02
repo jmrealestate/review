@@ -159,7 +159,7 @@ if (called) {
 		try {
 			showLoader();
 
-			const response = await fetch('https://main-server-u49f.onrender.com/api/v1/night-in-paradise/reviews', {
+			const response = await fetch('https://kss-taby.onrender.com/api/v1/night-in-paradise/reviews', {
 				method: 'POST',
 				credentials: 'include',
 				headers: { 'Content-Type': 'application/json' },
