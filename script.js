@@ -210,6 +210,9 @@ function hideLoader() {
 	document.body.classList.remove('loader-active');
 }
 
-KSS.init({
+KSS_ENGINE.init({
 	serviceId: '67e68ec68f2f350455c5cdc3',
+	type: 'service',
+	fallbackPath: '',
+	fallbackOnly: true,
 });
